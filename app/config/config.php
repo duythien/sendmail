@@ -27,7 +27,7 @@ return new \Phalcon\Config(array(
                         'port' 		=> 465,
                         'security' => 'ssl',
                         'username' => 'fcopensuse@gmail.com',
-                        'password' => 'matkhaulagi',
+                        'password' => '',
                 )
         ),
 ));
