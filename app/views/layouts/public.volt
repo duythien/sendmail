@@ -6,14 +6,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      {{ link_to(null, 'class': 'brand', 'Test')}}
+      {{ link_to(null, 'class': 'brand', 'Sitepoint')}}
         <div class="nav-collapse">
 
           <ul class="nav">
 
             {%- set menus = [
               'Home': null,
-              'Signup': 'session/signup'
+              'Signup': 'session/signup',
+              'Login' : 'session/loginOpauth'
             ] 
             -%}
 

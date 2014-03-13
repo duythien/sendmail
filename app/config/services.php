@@ -2,6 +2,7 @@
 
 use Phalcon\DI\FactoryDefault,
 	Phalcon\Mvc\View,
+	Phalcon\Flash\Direct as Flash,
 	Phalcon\Mvc\Url as UrlResolver,
 	Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter,
 	Phalcon\Mvc\View\Engine\Volt as VoltEngine,
@@ -88,11 +89,26 @@ $di->set('session', function() {
 	return $session;
 });
 /**
+ * Flash service with custom CSS classes
+ */
+$di->set('flash', function(){
+	return new Flash(array(
+		'error' => 'alert alert-error',
+		'success' => 'alert alert-success',
+		'notice' => 'alert alert-info',
+	));
+});
+
+/**
  * Start the sendmail
  */
-/**
-* Mail service uses AmazonSES
-*/
+
 $di->set('mail', function(){
         return new Mail();
+});
+/**
+*Start auth login google, yahoo,...
+*/
+$di->set('auth',function(){
+	return new  Auth();
 });

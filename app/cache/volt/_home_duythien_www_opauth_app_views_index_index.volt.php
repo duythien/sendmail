@@ -1,24 +1,24 @@
 
-{{content()}}
+<?php echo $this->getContent(); ?>
 <div class="container">
       
 
 	<div class="container text-center">
-	{{form('class':'form-signin')}}
+	<?php echo $this->tag->form(array('class' => 'form-signin')); ?>
 	    	<h2 class="form-signin-heading">Sign in</h2>
 
 			<small class="text-muted">Connect [your service] with your favorite social network</small>
 
 			
 <p>
-{{link_to('session/loginOpauth/facebook','class':'btn btn-primary', '<i class="fa fa-facebook fa-3x"></i>')}}
+<?php echo $this->tag->linkTo(array('session/loginOpauth/facebook', 'class' => 'btn btn-primary', '<i class="fa fa-facebook fa-3x"></i>')); ?>
 </p>
 <p>
-{{link_to('session/loginOpauth/twitter','class':'btn btn-primary', '<i class="fa fa-twitter fa-3x"></i>')}}
+<?php echo $this->tag->linkTo(array('session/loginOpauth/twitter', 'class' => 'btn btn-primary', '<i class="fa fa-twitter fa-3x"></i>')); ?>
 </p>
 
 <p>
-{{link_to('session/loginOpauth/google','class':'btn btn-primary', '<i class="fa fa-google-plus fa-3x"></i>')}}
+<?php echo $this->tag->linkTo(array('session/loginOpauth/google', 'class' => 'btn btn-primary', '<i class="fa fa-google-plus fa-3x"></i>')); ?>
 </p>
 
 

@@ -1,4 +1,7 @@
-sendmail
+sendmail and authentication phalcon
 ========
 
-how to send gmail in phalcon
+Reading tutorial
+
+http://www.sitepoint.com/sending-confirmation-emails-phalcon-swift/
+

@@ -36,6 +36,19 @@ class SessionController extends ControllerBase
     {
         echo " <h2> You Login Form </h2>";
     }
+    public function loginOpauthAction()
+    {
+       
+        $this->session->set('opauth',$this->auth->login());
+
+    }
+    public function successAction()
+    {
+
+         $this->view->auths = $this->session->get('opauth');
+         //var_dump($result);
+         //$this->view->disable();
+    }
 
     /**
          * Confirms an e-mail, if the user must change its password then changes it
@@ -61,8 +74,9 @@ class SessionController extends ControllerBase
             //confirmation
             $confirmation->confirmed = 'Y';
             $confirmation->user->active = 'Y';
+
             /**
-                 * Change the confirmation to 'confirmed' and update the user to 'active'
+            * Change the confirmation to 'confirmed' and update the user to 'active'
             */
             if ($confirmation->save()) {
                     return $this->dispatcher->forward(array(

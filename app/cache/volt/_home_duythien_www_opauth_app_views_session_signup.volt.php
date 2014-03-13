@@ -1,6 +1,6 @@
-{{ content() }}
+<?php echo $this->getContent(); ?>
 <div align="center">
-	{{ form('class': 'form-search') }}
+	<?php echo $this->tag->form(array('class' => 'form-search')); ?>
 		<div align="left">
 			<h2>Sign Up</h2>
 		</div>
@@ -8,31 +8,31 @@
 			<tr>
 				<td align="right">Full Name</td>
 				<td>
-					{{ text_field("fullName") }}
+					<?php echo $this->tag->textField(array('fullName')); ?>
 				</td>
 			</tr>
 			<tr>
 				<td align="right">Username</td>
 				<td>
-					{{ text_field("username") }}
+					<?php echo $this->tag->textField(array('username')); ?>
 				</td>
 			</tr>
 			<tr>
 				<td align="right">Email</td>
 				<td>
-					{{ text_field('email')}}
+					<?php echo $this->tag->textField(array('email')); ?>
 				</td>
 			</tr>
 			<tr>
 				<td align="right">Password</td>
 				<td>
-					{{ password_field("password") }}
+					<?php echo $this->tag->passwordField(array('password')); ?>
 				</td>
 			</tr>
 			
 			<tr class="form-actions">
 				<td align="right"></td>
-				<td> {{ submit_button('Save','class':'btn btn-primary btn-large') }}</td>
+				<td> <?php echo $this->tag->submitButton(array('Save', 'class' => 'btn btn-primary btn-large')); ?></td>
 			</tr>
 		</table>
 
