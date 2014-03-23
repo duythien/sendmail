@@ -6,7 +6,7 @@ use Phalcon\Mvc\User\Component,
 require_once __DIR__ . '/../../vendor/Opauth/Opauth.php';
 /**
  *
- * Sends e-mails based on pre-defined templates
+ * Authenticaton based on pre-defined paramater
  */
 class Auth extends Component
 {
@@ -14,24 +14,28 @@ class Auth extends Component
 	 * paramater array
 	 */
 
-	//protected $config;
+	protected $paramater;
 
-	//Login with account google
+
+	//Login with account google and more
 	public function login()
 	{
 
-		$googleConfig = $this->objectToArray($this->config->opauth);
+		$this->paramater = $this->objectToArray($this->config->opauth);
 
+		if (is_array($this->paramater)) {
+			$paramater = $this->paramater;
+		}
 		
-
-		//echo "<pre>";
-		//print_r($googleConfig);
-		var_dump($googleConfig);
-		
-		$opauth = new Opauth($googleConfig);
+		$opauth = new Opauth($paramater);
 
 		$opauth->run();
 	}
+	/**
+	 * Convert  object into array
+	 * @param   $object is object
+	 * @return  array
+	 */
 	public function objectToArray($object)
     {
         if(!is_object($object) && !is_array($object))
