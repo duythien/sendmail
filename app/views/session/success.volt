@@ -27,8 +27,10 @@
 			{% for key1,item in auth %}
 					{% if key1 is sameas('image') %}
 						<li><strong>{{key1}}</strong>:<img src="{{item}}" width="100" height="100"> </li>
+					{% elseif key1 == 'urls' %}
+						<li><strong>{{key1}}</strong>: {{item['google']}} </li>
 					{% else %}
-						<li><strong>{{key1}}</strong>: {{item}} </li>
+					<li><strong>{{key1}}</strong>: {{item}} </li>
 					{% endif %}
 			{% endfor %}
 			</ul></td>

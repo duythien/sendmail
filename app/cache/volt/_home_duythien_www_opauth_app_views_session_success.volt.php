@@ -27,8 +27,10 @@
 			<?php foreach ($auth as $key1 => $item) { ?>
 					<?php if (($key1) === ('image')) { ?>
 						<li><strong><?php echo $key1; ?></strong>:<img src="<?php echo $item; ?>" width="100" height="100"> </li>
+					<?php } elseif ($key1 == 'urls') { ?>
+						<li><strong><?php echo $key1; ?></strong>: <?php echo $item['google']; ?> </li>
 					<?php } else { ?>
-						<li><strong><?php echo $key1; ?></strong>: <?php echo $item; ?> </li>
+					<li><strong><?php echo $key1; ?></strong>: <?php echo $item; ?> </li>
 					<?php } ?>
 			<?php } ?>
 			</ul></td>
