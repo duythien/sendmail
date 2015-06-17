@@ -1,20 +1,19 @@
 <?php
 
-use Phalcon\Mvc\User\Component,
-	Phalcon\Mvc\View;
+use Phalcon\Mvc\User\Component;
+use Phalcon\Mvc\View;
 
 require_once __DIR__ . '/../../vendor/Swift/swift_required.php';
+
 /**
- *
  * Sends e-mails based on pre-defined templates
  */
 class Mail extends Component
 {
-
+	/**
+	 * @var Swift_SmtpTransport
+	 */
 	protected $_transport;
-
-	
-	
 
 	/**
 	 * Applies a template to be used in the e-mail
@@ -32,8 +31,6 @@ class Mail extends Component
 		return $this->view->getRender('emailTemplates', $name, $parameters, function($view){
 			$view->setRenderLevel(View::LEVEL_LAYOUT);
 		});
-
-		return $view->getContent();
 	}
 
 	/**
